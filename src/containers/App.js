@@ -19,6 +19,7 @@ class App extends Component {
 				<Page
 					photos={page.photos}
 					year={page.year}
+					user_id={user.user_id}
 					isFetching={page.isFetching}
 					getPhotos={getPhotosAction}
 				/>
@@ -43,7 +44,7 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		getPhotosAction: year => dispatch(getPhotos(year)),
+		getPhotosAction: (year, user_id) => dispatch(getPhotos(year, user_id)),
 		handleLoginAction: () => dispatch(handleLogin()),
 	};
 };

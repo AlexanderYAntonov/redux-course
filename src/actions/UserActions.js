@@ -10,9 +10,11 @@ export function handleLogin() {
 		VK.Auth.login(r => {
 			if (r.session) {
 				let username = r.session.user.first_name;
+				let user_id = r.session.user.id;
+
 				dispatch({
 					type: LOGIN_SUCCESS,
-					payload: username,
+					payload: { username: username, user_id: user_id },
 				});
 			} else {
 				dispatch({

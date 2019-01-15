@@ -86,3 +86,21 @@ display: inline-block;
 .btn:hover {
   background-color: #6d8cb0
 }
+
+.gallery {
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: top;
+  justify-content: space-around;
+}
+
+.photo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+}
+
