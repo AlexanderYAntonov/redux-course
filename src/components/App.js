@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { User } from '../components/User';
-import { Page } from '../components/Page';
-import { getPhotos } from '../actions/PageActions';
-import { handleLogin } from '../actions/UserActions';
+//import { connect } from 'react-redux';
+import UserContainer from '../containers/UserContainer';
+import PageContainer from '../containers/PageContainer';
+//import { User } from './User';
+//import { Page } from './Page';
+//import { getPhotos } from '../actions/PageActions';
+//import { handleLogin } from '../actions/UserActions';
 import './App.css';
 
 class App extends Component {
+	render() {
+		return (
+			<div className="app">
+				<PageContainer />
+				<UserContainer />
+			</div>
+		);
+	}
+}
+
+/*
 	render() {
 		const { user, page, getPhotosAction, handleLoginAction } = this.props;
 		return (
@@ -53,3 +66,6 @@ export default connect(
 	mapStateToProps,
 	mapDispatchToProps
 )(App);
+*/
+
+export default App;

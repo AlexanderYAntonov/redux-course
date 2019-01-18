@@ -2,19 +2,19 @@ export const GET_PHOTOS_REQUEST = 'GET_PHOTOS_REQUEST';
 export const GET_PHOTOS_SUCCESS = 'GET_PHOTOS_SUCCESS';
 export const GET_PHOTOS_FAIL = 'GET_PHOTOS_FAIL';
 
-export function getPhotos(year, user_id) {
+export function getPhotos(year) {
 	return dispatch => {
 		dispatch({
 			type: GET_PHOTOS_REQUEST,
 			payload: year,
 		});
 
-		console.log('Loading photos for user_id ', user_id);
+		//console.log('Loading photos for user_id ', user_id);
 		let photos = [];
 		//eslint-disable-next-line no-undef
 		VK.Api.call(
 			'photos.getAll',
-			{ owner_id: +user_id, extended: 1, count: 200, version: 5.92 },
+			{ extended: 1, count: 200, version: 5.92 },
 			function(r) {
 				if (r.response) {
 					photos = r.response.map((item, index) => {

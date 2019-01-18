@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 export class User extends React.Component {
 	renderTemplate = () => {
 		const { name, error, isFetching } = this.props;
+		console.log('<User/> render');
 		if (error) {
 			return <p>Во время запроса произошла ошибка, обновите страницу</p>;
 		}
